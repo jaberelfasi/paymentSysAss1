@@ -29,7 +29,7 @@ require __Dir__ . '/Dao.php';
                     <option id="nopayment">No Payment</option>
                 </select>
                 <br><br><br><br><br><br>
-                <button onclick="myFunction()">Click me</button>
+                <button onclick="clickButton()">Send Page to Customer</button>
                 <br><p id="picoutput"></p>
             </div>
             <div class="col-md-4">
@@ -45,8 +45,10 @@ require __Dir__ . '/Dao.php';
                         'Contract Length: ', 'Website URL: ', 'Telephone: ', 'Order Number: ',
                         'Product: ', 'Payment Amount(£): ');
                     $valueArray = $db->getOrderDetails();
+                    $y=1;
                     for ($i = 0; $i < 9; $i++) {
-                        echo "<tr><td>" . $labelArray[$i] . "</td><td>" . $valueArray[0][$i] . "</td></tr>";
+                        echo "<tr><td>" . $labelArray[$i] . "</td><td>" . $valueArray[0][$y] . "</td></tr>";
+                        $y++;
                     }
                     ?>
 
@@ -76,3 +78,6 @@ require __Dir__ . '/Dao.php';
 <script src="javascript.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="http://sandbox.dev:8080/paymentSys/myscripts.js"></script>
+<script>
+document.getElementById("defaultOpen").click();
+</script>
